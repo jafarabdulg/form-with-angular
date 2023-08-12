@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'challenge-project';
+  animes: any[] = [];
+  getAnime(anime: any) {
+    this.animes.push(anime);
+  }
 }
