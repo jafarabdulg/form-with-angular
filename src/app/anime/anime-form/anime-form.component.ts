@@ -13,10 +13,11 @@ export class AnimeFormComponent {
     cover: new FormControl(null, [Validators.required, Validators.minLength(10)])
   });
 
-  @Output() sendAnime = new EventEmitter<any>();
-
+  @Output() sendAnime = new EventEmitter<any[]>();
+  animes: any[] = [];
   emitData(data: any): void{
-    this.sendAnime.emit(data)
+    this.animes.push(data);
+    this.sendAnime.emit(this.animes);
   }
 
   form(property: string): FormGroup{

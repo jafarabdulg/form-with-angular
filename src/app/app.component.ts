@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   animes: any[] = [];
+
   getAnime(anime: any) {
-    this.animes.push(anime);
+    this.animes = [...anime];
   }
 }
