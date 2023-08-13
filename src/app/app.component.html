@@ -1,4 +1,8 @@
-<div class="container pt-4">
+<app-login *ngIf="!isLogin" [isLogin]="isLogin" (auth)="getLogin($event)"></app-login>
+
+<app-navbar *ngIf="isLogin" (logoutReq)="handleLogoutReq($event)" class="position-sticky top-0 z-1"></app-navbar>
+<div *ngIf="isLogin" class="container pt-4">
+
   <div class="mb-3">
     <app-anime-form (sendAnime)="getAnime($event)"></app-anime-form>
   </div>
